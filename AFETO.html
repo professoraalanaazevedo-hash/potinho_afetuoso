@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>POTINHO AFETUOSO ✨</title>
+  <style>
+    body {
+  margin: 0;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-family: 'Segoe UI', 'Poppins', Arial, sans-serif;
+  color: #c2185b;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+body::before {
+  content: "";
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background-image: url('https://i.postimg.cc/qvxk5qrV/IMG-1509.avif'); /* sua imagem */
+  background-size: cover;
+  background-position: center;
+  filter: blur(4px); /* blur levíssimo */
+  z-index: -1; /* fica atrás do conteúdo */
+}
+
+    h1 {
+      font-size: 28px;
+      max-width: 900px;
+      line-height: 1.6;
+      margin-bottom: 40px;
+      font-weight: 600;
+      text-shadow: 0 0 10px rgba(255,255,255,0.9);
+    }
+
+   button {
+  padding: 15px 40px;
+  font-size: 20px;
+  background: linear-gradient(135deg, #c2185b, #ff69b4);
+  color: white;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+  transition: transform 0.2s, background 0.3s;
+}
+
+button:hover {
+  transform: scale(1.05);
+  background: linear-gradient(135deg, #ad1457, #ff1493);
+}
+
+
+  #mensagem {
+  margin-top: 40px;
+  font-size: 26px;
+  font-weight: bold;
+  color: #c2185b; /* mesma cor do botão */
+  text-shadow: 0 0 10px rgba(255,255,255,0.9);
+  background: rgba(255,255,255,0.8); /* caixa translúcida */
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 0 15px rgba(194,24,91,0.6); /* brilho rosa bordô */
+  display: inline-block;
+  animation: aparecer 0.6s ease-out; /* animação */
+}
+
+@keyframes aparecer {
+  from {
+    transform: scale(0.8);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+  </style>
+</head>
+<body>
+  <h1>Oii amiga, não posso estar presente sempre, mas criei esse potinho de mensagens digital pra ti usar sempre que precisar do meu afeto (ou saber os motivos que faz eu amar a tua amizade) ❤️❤️</h1>
+  <button onclick="sortearMensagem()">Clique aqui</button>
+  <div id="mensagem"></div>
+
+  <script>
+    const frases = [
+      "Eu amo quando você vibra as minhas felicidades",
+      "Você é mais forte do que imagina.",
+      "Seja gentil consigo mesma.",
+      "Você tem um brilho único.",
+      "Confie em si mesma, você já venceu muito.",
+      "Hoje é um bom dia para começar de novo.",
+      "Respire fundo, tudo passa.",
+      "Eu amo ter acesso ao teu lado afetuoso.",
+      "Você é importante e faz diferença.",
+      "Eu amo o seu jeito respeito em confortar as minhas tristezas.",
+      "Você não está sozinha, eu estou aqui.",
+      "A calma é poderosa, abrace-a.",
+      "Eu amo a tua companhia, independente do que estamos fazendo.",
+      "Tudo bem não estar bem o tempo todo.",
+      "Você é muito importante na minha vida.",
+      "Seu sorriso pode mudar o dia de alguém.",
+      "Não se cobre tanto, você já faz o seu melhor."
+    ];
+
+    function sortearMensagem() {
+      const indice = Math.floor(Math.random() * frases.length);
+      document.getElementById("mensagem").innerText = frases[indice];
+    }
+  </script>
+</body>
+</html>
